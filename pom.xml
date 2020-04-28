@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>win.oscene</groupId>
+    <artifactId>hanason-parent</artifactId>
+    <version>0.1</version>
+    <name>hanason-parent</name>
+    <description>Spring Boot pom ext</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <spring-boot>2.2.6.RELEASE</spring-boot>
+        <fastjson>1.2.68</fastjson>
+        <guava>28.2-jre</guava>
+        <druid>1.1.22</druid>
+        <mybatis-plus>3.3.1</mybatis-plus>
+        <velocity-engine-core>2.2</velocity-engine-core>
+        <google-zxing>3.3.3</google-zxing>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--fastjson-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson}</version>
+            </dependency>
+            <!--    guava            -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid}</version>
+            </dependency>
+            <!--   mybatis-plus         -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis-plus}</version>
+            </dependency>
+
+            <!--     velocity模版       -->
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${velocity-engine-core}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.zxing</groupId>
+                <artifactId>core</artifactId>
+                <version>${google-zxing}</version>
+            </dependency>
+
+
+            <dependency>
+                <!-- Import dependency management from Spring Boot -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.2.6.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
+
+</project>
