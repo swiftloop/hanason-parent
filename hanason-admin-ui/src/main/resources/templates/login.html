@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" th:href="@{/layui/css/layui.css}">
+    <style>
+        body {
+            background-color: #fff9ec;
+        }
+
+        .login-body {
+            margin-top: 20%;
+            text-align: center;
+            background-color: #fff9ec;
+        }
+        input{
+            width: 200px;
+        }
+        .layui-row{
+            margin-top: 20%;
+        }
+    </style>
+</head>
+<body>
+<div class="layui-container">
+    <div class="layui-row">
+        <div class="layui-col-md7">
+            <div>
+                <img th:src="@{/images/timg.jpg}" width="300px" height="300px" alt="">
+            </div>
+        </div>
+        <div class="layui-col-md4">
+            <div class="login-body">
+                <form class="layui-form">
+                    <div class="layui-form-item">
+                        <h1>Admin login</h1>
+                    </div>
+                    <div class="layui-form-item">
+                        <label for="username"></label>
+                        <input id="username" class="layui-input" type="text" name="username" value="" placeholder="username"
+                               required="required"/>
+                    </div>
+                    <div class="layui-form-item">
+                        <label for="password"></label>
+                        <input id="password" class="layui-input" type="text" name="password" value="" placeholder="password"
+                               required="required"/>
+                    </div>
+                    <button class="layui-btn layui-btn-lg layui-btn-radius layui-btn-normal" type="submit" value="submit">login</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

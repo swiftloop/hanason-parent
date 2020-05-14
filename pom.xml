@@ -10,6 +10,7 @@
     <description>Spring Boot pom ext</description>
 
     <properties>
+        <hanason-version>0.1</hanason-version>
         <java.version>1.8</java.version>
         <spring-boot>2.2.6.RELEASE</spring-boot>
         <fastjson>1.2.68</fastjson>
@@ -18,10 +19,51 @@
         <mybatis-plus>3.3.1</mybatis-plus>
         <velocity-engine-core>2.2</velocity-engine-core>
         <google-zxing>3.3.3</google-zxing>
+        <jjwt>0.11.1</jjwt>
+        <swagger>2.7.0</swagger>
+        <swagger-annotations>1.5.13</swagger-annotations>
+        <jmh>1.9</jmh>
     </properties>
+
+
+    <modules>
+        <module>hanason-web</module>
+        <module>hanason-common</module>
+        <module>hanason-generator</module>
+        <module>hanason-core</module>
+        <module>hanason-app</module>
+    </modules>
+
+
 
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>win.oscene</groupId>
+                <artifactId>hanason-core</artifactId>
+                <version>${hanason-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>win.oscene</groupId>
+                <artifactId>hanason-generator</artifactId>
+                <version>${hanason-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>win.oscene</groupId>
+                <artifactId>hanason-web</artifactId>
+                <version>${hanason-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>win.oscene</groupId>
+                <artifactId>hanason-common</artifactId>
+                <version>${hanason-version}</version>
+            </dependency>
+
+
             <!--fastjson-->
             <dependency>
                 <groupId>com.alibaba</groupId>
@@ -63,6 +105,55 @@
                 <groupId>com.google.zxing</groupId>
                 <artifactId>core</artifactId>
                 <version>${google-zxing}</version>
+            </dependency>
+            <!--    jwt        -->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-api</artifactId>
+                <version>${jjwt}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-impl</artifactId>
+                <version>${jjwt}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-jackson</artifactId> <!-- or jjwt-gson if Gson is preferred -->
+                <version>${jjwt}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <!--   接口文档     -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger-annotations}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.openjdk.jmh</groupId>
+                <artifactId>jmh-core</artifactId>
+                <version>${jmh}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.openjdk.jmh</groupId>
+                <artifactId>jmh-generator-annprocess</artifactId>
+                <version>${jmh}</version>
+                <scope>test</scope>
             </dependency>
 
 

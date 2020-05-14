@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active: dev
+
+
+server:
+  port: 9090
+  tomcat:
+    accept-count: 500
+    max-threads: 2000
+    connection-timeout: 3s
+    min-spare-threads: 10
+  compression:
+    enabled: true
+    min-response-size: 100KB
+
+
+

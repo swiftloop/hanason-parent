@@ -1,0 +1,60 @@
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://115.28.130.4:3306/nopa?useUnicode=true&useSSL=false&characterEncoding=utf8
+      username: root
+      password: 12345678
+      initial-size: 1
+      max-active: 50
+      max-wait: 60000   #获取连接时最大等待时间，单位毫秒
+      #use-unfair-lock: true   #使用非公平锁  当配置了max-wait之后需要开启 否则有性能影响
+      db-type: mysql
+      pool-prepared-statements: false  #mysql禁用 oracle开启
+      max-pool-prepared-statement-per-connection-size: -1  #当该值大于0 则自动视为打开了PsCache  pool-prepared-statements 变为true
+      validation-query: select 1
+      test-while-idle: true
+      filters: stat,slf4j,wall
+      stat-view-servlet:
+        login-password: cocospw
+        login-username: cocos
+        enabled: true
+      filter:
+        stat:
+          slow-sql-millis: 20 #显示慢查询
+          merge-sql: true   #合并一样的sql
+          log-slow-sql: true
+          connection-stack-trace-enable: true  #内存泄漏追踪
+        wall:
+          config:
+            truncate-allow: false  #禁用清空操作
+            create-table-allow: false #禁用创建
+            alter-table-allow: false #禁用修改表
+            drop-table-allow: false #禁用删除表
+        slf4j:
+          enabled: true
+          result-set-log-enabled: true
+          statement-log-enabled: true
+          connection-log-enabled: true
+          data-source-log-enabled: true
+      web-stat-filter:
+        session-stat-enable: true
+        session-stat-max-count: 2000
+      aop-patterns: com.framework.hanason.controller.*,com.framework.hanason.dao.*,com.framework.hanason.service.*
+    initialization-mode: never
+#    schema: classpath:db.sql
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: com.framework.hanason..app.entity
+
+
+logging:
+  level:
+    root: info
+    org.apache.ibatis: info
+server:
+  servlet:
+    context-path: /hanason
+
+
+
