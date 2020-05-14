@@ -1,4 +1,5 @@
-create database `hanason-app`;
+create
+database `hanason-app`;
 use `hanason-app`;
 
 create table `sys_user`
@@ -8,6 +9,7 @@ create table `sys_user`
     device_id       varchar(40) not null comment '设备id-也即是alias',
     tag             varchar(20) not null comment '应用标识',
     platform        varchar(20) not null comment '发布应用的平台 baidu、mi等',
+    system          varchar(20) not null comment '系统',
     version         varchar(20) not null comment '当前应用的版本',
     ip              bigint(20)  not null comment '用户登录的ip',
     last_ip         bigint(20)  null comment '上次登录的ip',
@@ -20,7 +22,8 @@ create table `sys_user`
 ) engine innodb
   default charset utf8;
 
-alter table `sys_user` add unique index `idx_phone` (phone);
+alter table `sys_user`
+    add unique index `idx_phone` (phone);
 
 
 create table `sys_user_register`
@@ -36,4 +39,5 @@ create table `sys_user_register`
 ) engine innodb
   default charset utf8;
 
-alter table `sys_user_register` add unique index `idx_phone` (phone);
+alter table `sys_user_register`
+    add unique index `idx_phone` (phone);
