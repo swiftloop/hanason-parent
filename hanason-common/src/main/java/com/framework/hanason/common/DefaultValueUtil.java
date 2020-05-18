@@ -6,7 +6,7 @@ package com.framework.hanason.common;
 public abstract class DefaultValueUtil {
 
 
-    public static <T,M extends T> T value(T origin,M defaultValue){
+    public static <T, M extends T> T value(T origin, M defaultValue) {
         return origin == null ? defaultValue : origin;
     }
 

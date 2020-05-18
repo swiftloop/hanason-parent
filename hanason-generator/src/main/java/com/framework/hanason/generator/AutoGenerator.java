@@ -34,7 +34,7 @@ public class AutoGenerator {
         globalConfig.setAuthor("auto generator");
         //是否打开文件夹
         globalConfig.setOpen(false);
-        globalConfig.setEntityName("%sPo");
+        globalConfig.setEntityName("%sDo");
         globalConfig.setMapperName("%sDao");
         globalConfig.setDateType(DateType.ONLY_DATE);
         globalConfig.setBaseResultMap(true);

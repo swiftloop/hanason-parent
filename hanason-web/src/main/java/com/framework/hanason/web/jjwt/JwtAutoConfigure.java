@@ -23,7 +23,7 @@ public class JwtAutoConfigure {
 
 
     @Bean
-    @ConditionalOnMissingBean
+    @ConditionalOnMissingBean(value = JwtTemplate.class)
     public JwtTemplate jwtTemplate(JwtKeyStore jwtKeyStore){
         return new JwtTemplate(jwtKeyStore);
     }

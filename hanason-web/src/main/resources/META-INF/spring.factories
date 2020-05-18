@@ -3,4 +3,5 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.framework.han
   com.framework.hanason.web.websocket.WebSocketConfig, \
   com.framework.hanason.web.ExceptionHandlerAdapter, \
   com.framework.hanason.web.user.AuthorizationConfig,\
-  com.framework.hanason.web.jjwt.JwtAutoConfigure
+  com.framework.hanason.web.jjwt.JwtAutoConfigure, \
+  com.framework.hanason.web.WebMvcForExceptionConfig

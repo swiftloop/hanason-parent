@@ -38,6 +38,7 @@ public class ExceptionHandlerAdapter {
     }
 
     @ExceptionHandler(value = {MissingServletRequestParameterException.class, MissingPathVariableException.class})
+    @ResponseBody
     public ResultData notFoundParams(HttpServletRequest request,Exception e){
         write(request,e);
         return ResultData.err(500,"非法参数");
@@ -58,6 +59,15 @@ public class ExceptionHandlerAdapter {
         }
         return ResultData.err(e.getCode(),e.getMsg());
     }
+
+
+    @ExceptionHandler(value = Exception.class)
+    public String unknownEx(Exception e){
+        log.error("未捕获异常",e);
+        return "unknown";
+    }
+
+
 
 
     private static void write(HttpServletRequest request,Exception e){

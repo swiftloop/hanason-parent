@@ -17,11 +17,15 @@ public class AuthorizationConfig {
 
 
     @Bean
-    public AuthorizationApiPointcut pointcut(JwtTemplate jwtTemplate) {
-        AuthorizationApiMethodInterceptor<IUser> interceptor = new AuthorizationApiMethodInterceptor<>(jwtTemplate, IUser.class);
+    public AuthorizationApiPointcut authorizationApiPointcut(AuthorizationApiMethodInterceptor<IUser> advice) {
         AuthorizationApiPointcut pointcut = new AuthorizationApiPointcut();
-        pointcut.setAdvice(interceptor);
+        pointcut.setAdvice(advice);
         return pointcut;
+    }
+
+    @Bean
+    public AuthorizationApiMethodInterceptor<IUser> authorizationAdvice(JwtTemplate jwtTemplate) {
+        return new AuthorizationApiMethodInterceptor<>(jwtTemplate, IUser.class);
     }
 
 

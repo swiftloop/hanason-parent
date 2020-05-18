@@ -10,7 +10,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
  */
 @SpringBootApplication
 @EnableAsync
-@MapperScan(value= "com.framework.hanason.app.dao")
+@MapperScan(value = "com.framework.hanason.app.dao")
 public class HanasonAppApplication {
 
     public static void main(String[] args) {

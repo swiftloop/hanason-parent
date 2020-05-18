@@ -3,7 +3,6 @@ package com.framework.hanason.common;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
 import java.util.Locale;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -33,6 +32,7 @@ public class IdGenerator {
 
     /**
      * 创建一个随机的订单号  不包括tag 长度为34
+     *
      * @param tag 标识
      * @return 订单号
      */
@@ -50,11 +50,6 @@ public class IdGenerator {
             chars[i] = ALL[ThreadLocalRandom.current().nextInt(ALL.length)];
         }
         return new String(chars);
-    }
-
-
-    public static void main(String[] args) {
-        System.out.println(Arrays.toString(ALL));
     }
 
 
