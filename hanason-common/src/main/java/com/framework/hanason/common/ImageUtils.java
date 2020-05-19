@@ -3,7 +3,10 @@ package com.framework.hanason.common;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.*;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.Random;
 
 /**
@@ -83,10 +86,7 @@ public class ImageUtils {
         return image;
     }
 
-    public static void main(String[] args) throws IOException {
-        ImageIO.write(codeImage(new char[]{'c','e','2','3'},200,30),"jpg",
-                new FileOutputStream(new File("/Users/cocos/Desktop/cert/a.jpg")));
-    }
+
 
 
 }
