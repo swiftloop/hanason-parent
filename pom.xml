@@ -13,7 +13,7 @@
         <hanason-version>0.1</hanason-version>
         <java.version>1.8</java.version>
         <spring-boot>2.2.6.RELEASE</spring-boot>
-        <fastjson>1.2.68</fastjson>
+        <fastjson>1.2.83</fastjson>
         <guava>28.2-jre</guava>
         <druid>1.1.22</druid>
         <mybatis-plus>3.3.1</mybatis-plus>
